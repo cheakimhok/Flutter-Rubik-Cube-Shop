@@ -1,15 +1,14 @@
-// import 'package:rubik_cube_shop/forgot_password.dart';
 // import 'package:rubik_cube_shop/home.dart';
-import 'package:rubik_cube_shop/signup.dart';
+import 'package:rubik_cube_shop/signin.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,41 +36,12 @@ class _SignInState extends State<SignIn> {
                 margin: EdgeInsets.only(left: 30, right: 30, top: 20),
                 child: Column(
                   children: <Widget> [
+                    _textInput(hint:"Username", icon:Icons.person),
                     _textInput(hint:"Email", icon:Icons.email),
                     _textInput(hint:"Password", icon:Icons.vpn_key),
-                    // Container(
-                    //   margin: EdgeInsets.only(top:30, bottom: 140),
-                    //   alignment: Alignment.center,
-                    //   text: TextSpan(
-                    //     "Forgot Password?", textAlign: TextAlign.center,
-                    //     style: TextStyle(
-                    //       color: Color.fromRGBO(0, 161, 233, 1),
-                    //       fontWeight: FontWeight.w400,
-                    //       fontSize: 18,
-                    //     ),
-                    //   )
-                    // ),
-                    SizedBox(height: 20),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Forgot Password", 
-                            style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
-                            ),
-                            recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(builder: (context) => ForgotPassword()),
-                              // );
-                            }
-                          )
-                        ]
-                      )
+                    Container(
+                      margin: EdgeInsets.only(top:30, bottom: 70),
                     ),
-                    SizedBox(height: 150,),
                     SizedBox(
                       width: double.infinity,
                       height: 60,
@@ -86,7 +56,7 @@ class _SignInState extends State<SignIn> {
                           //   MaterialPageRoute(builder: (context) => HomeScreen()),
                           // )
                         },
-                        child: Text("Sign In",
+                        child: Text("Sign Up",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -102,11 +72,8 @@ class _SignInState extends State<SignIn> {
             RichText(
               text: TextSpan(
                 children: [
-                  TextSpan(
-                    text: "Don't have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)
-                  ),
-                  TextSpan(
-                    text: "  Sign Up", 
+                  TextSpan(text: "Already have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)),
+                  TextSpan(text: "  Sign In", 
                     style: TextStyle(
                       fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
                     ),
@@ -114,7 +81,7 @@ class _SignInState extends State<SignIn> {
                     ..onTap = () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUp()),
+                        MaterialPageRoute(builder: (context) => SignIn()),
                       );
                     }
                   ),
@@ -147,6 +114,7 @@ class _SignInState extends State<SignIn> {
       ),
       padding: EdgeInsets.only(top: 5, bottom: 5 ,left: 10),
       child: TextFormField(
+        // obscureText: true,
         controller: controller,
         decoration: InputDecoration(
           border:  InputBorder.none,
