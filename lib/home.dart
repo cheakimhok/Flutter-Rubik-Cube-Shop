@@ -1,4 +1,4 @@
-// import 'package:rubik_cube_shop/2x2_product.dart';
+import 'package:rubik_cube_shop/2x2_product.dart';
 // import 'package:rubik_cube_shop/3x3_product.dart';
 // import 'package:rubik_cube_shop/4x4_product.dart';
 // import 'package:rubik_cube_shop/accessories_product.dart';
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen>  with SingleTickerProviderState
             child: TabBarView(
               controller: _tabController,
               children: [
-                // TwoByTwo(),
+                TwoByTwo(),
                 // ThreeByThree(),
                 // FourByFour(),
                 // OthersProduct(),
