@@ -1,4 +1,4 @@
-// import 'package:rubik_cube_shop/signin.dart';
+import 'package:rubik_cube_shop/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/size_config.dart';
 
@@ -77,10 +77,10 @@ class _BoardingComponentState extends State<BoardingComponent> {
                         ),
                         color: Color.fromRGBO(0, 161, 233, 1),
                         onPressed: () => {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => SignIn()),
-                          // )
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignIn()),
+                          )
                         }, 
                         child: Text("Continue",
                           style: TextStyle(
