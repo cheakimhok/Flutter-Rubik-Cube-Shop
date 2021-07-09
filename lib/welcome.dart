@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/size_config.dart';
-// import 'package:rubik_cube_shop/boarding.dart';
+import 'package:rubik_cube_shop/boarding.dart';
 
 
 class WelcomeScreen extends StatelessWidget {
@@ -75,10 +75,10 @@ class _WelcomeComponentState extends State<WelcomeComponent> {
                         ),
                         color: Color.fromRGBO(0, 161, 233, 1),
                         onPressed: () => {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => Boarding()),
-                          // )
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Boarding()),
+                          )
                         }, 
                         child: Text(
                           'GET STARTED',
