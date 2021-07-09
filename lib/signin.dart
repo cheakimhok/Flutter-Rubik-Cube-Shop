@@ -1,5 +1,5 @@
 import 'package:rubik_cube_shop/forgot_password.dart';
-// import 'package:rubik_cube_shop/home.dart';
+import 'package:rubik_cube_shop/home.dart';
 import 'package:rubik_cube_shop/signup.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -81,10 +81,10 @@ class _SignInState extends State<SignIn> {
                         ),
                         color: Color.fromRGBO(0, 161, 233, 1),
                         onPressed: () => {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => HomeScreen()),
-                          // )
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()),
+                          )
                         },
                         child: Text("Sign In",
                           style: TextStyle(
