@@ -1,4 +1,4 @@
-// import 'package:rubik_cube_shop/product_detail.dart';
+import 'package:rubik_cube_shop/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class ThreeByThree extends StatelessWidget {
@@ -37,15 +37,15 @@ class ThreeByThree extends StatelessWidget {
       padding: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 10),
       child: InkWell(
         onTap: () {
-          // Navigator.of(context).push(
-          //   MaterialPageRoute (
-          //     builder: (context) => ProductDetail(
-          //       assetPath: imgPath,
-          //       productprice: price,
-          //       productname: name
-          //     )
-          //   )
-          // );
+          Navigator.of(context).push(
+            MaterialPageRoute (
+              builder: (context) => ProductDetail(
+                assetPath: imgPath,
+                productprice: price,
+                productname: name
+              )
+            )
+          );
         },
         child: Container(
           decoration: BoxDecoration(
