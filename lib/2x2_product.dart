@@ -60,19 +60,6 @@ class TwoByTwo extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Padding (
-              //   padding: EdgeInsets.all(9),
-              //   child: Row  (
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       Icon(
-              //         Icons.favorite_outline,
-              //         color: Color.fromRGBO(0, 161, 233, 1),
-              //         size: 30,
-              //       )
-              //     ],
-              //   ),
-              // ),
               SizedBox(height: 15),
               Hero(
                 tag: imgPath,

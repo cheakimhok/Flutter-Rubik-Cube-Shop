@@ -21,9 +21,12 @@ class AccessoriesProduct extends StatelessWidget {
               childAspectRatio: 0.72,
               children: <Widget> [
                  _buildCard('Gan Bag', '\$1.99', 'assets/images/bag.png', context),
-                  _buildCard('Gan Lube', '\$2.99', 'assets/images/lube.jpeg', context),
-                  _buildCard('Gan Caps', '\$15.99', 'assets/images/cap.png', context),
-                  _buildCard('Gan GES', '\$14.99', 'assets/images/ges.jpeg', context)
+                _buildCard('Gan Lube', '\$2.99', 'assets/images/lube.jpeg', context),
+                _buildCard('Gan Caps', '\$5.99', 'assets/images/cap.png', context),
+                _buildCard('Gan Stickers', '\$4.99', 'assets/images/sticker.jpeg', context),
+                _buildCard('Gan GES', '\$6.99', 'assets/images/ges.jpeg', context),
+                _buildCard('Gan Timer', '\$15.99', 'assets/images/timer.png', context),
+                SizedBox(height: 55),
               ],
             ) 
           ),
@@ -60,19 +63,6 @@ class AccessoriesProduct extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Padding (
-              //   padding: EdgeInsets.all(9),
-              //   child: Row  (
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       Icon(
-              //         Icons.favorite_outline,
-              //         color: Color.fromRGBO(0, 161, 233, 1),
-              //         size: 30,
-              //       )
-              //     ],
-              //   ),
-              // ),
               SizedBox(height: 15),
               Hero  (
                 tag: imgPath,

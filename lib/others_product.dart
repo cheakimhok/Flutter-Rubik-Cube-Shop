@@ -20,9 +20,9 @@ class OthersProduct extends StatelessWidget {
               mainAxisSpacing: 15,
               childAspectRatio: 0.72,
               children: <Widget> [
-                 _buildCard('Gan Skewb M', '\$21.99', 'assets/images/skewb.jpeg', context),
-                  _buildCard('Gan Pyraminx M', '\$18.99', 'assets/images/pyraminx.jpeg', context),
-                  _buildCard('Gan Megaminx M', '\$57.99', 'assets/images/megaminx.png', context),
+                _buildCard('Gan Skewb M', '\$21.99', 'assets/images/skewb.jpeg', context),
+                _buildCard('Gan Pyraminx M', '\$18.99', 'assets/images/pyraminx.jpeg', context),
+                _buildCard('Gan Megaminx M', '\$57.99', 'assets/images/megaminx.png', context),
               ],
             ) 
           ),
@@ -59,19 +59,6 @@ class OthersProduct extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Padding (
-              //   padding: EdgeInsets.all(9),
-              //   child: Row  (
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       Icon(
-              //         Icons.favorite_outline,
-              //         color: Color.fromRGBO(0, 161, 233, 1),
-              //         size: 30,
-              //       )
-              //     ],
-              //   ),
-              // ),
               SizedBox(height: 15),
               Hero  (
                 tag: imgPath,

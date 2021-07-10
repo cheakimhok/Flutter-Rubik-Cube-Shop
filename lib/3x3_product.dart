@@ -20,12 +20,19 @@ class ThreeByThree extends StatelessWidget {
               mainAxisSpacing: 15,
               childAspectRatio: 0.72,
               children: <Widget> [
-                 _buildCard('Gan 356 M', '\$23.99', 'assets/images/3x3.jpeg', context),
-                  _buildCard('Gan 251 M Pro', '\$27.99', 'assets/images/3x3(5).jpeg', context),
-                  _buildCard('Gan 249 v2', '\$21.99', 'assets/images/3x3(2).jpeg', context),
-                  _buildCard('Gan 249 v2 Pro', '\$14.99', 'assets/images/3x3(3).jpeg', context)
-              ],
-            ) 
+                _buildCard('Gan 356 RS', '\$16.99', 'assets/images/3x3.jpeg', context),
+                _buildCard('Gan 356 Air SM', '\$31.99', 'assets/images/3x3(1).png', context),
+                _buildCard('Gan 330 Keychain', '\$7.99', 'assets/images/3x3(2).jpeg', context),
+                _buildCard('Gan 356 Air Pro', '\$33.99', 'assets/images/3x3(3).jpeg', context),
+                _buildCard('Gan 11M Duo', '\$39.99', 'assets/images/3x3(4).jpeg', context),
+                _buildCard('Gan 354 X', '\$43.99', 'assets/images/3x3(5).jpeg', context),
+                _buildCard('Gan 356 XS', '\$53.99', 'assets/images/3x3(6).jpeg', context),
+                _buildCard('Gan 356 i', '\$69.99', 'assets/images/3x3(7).jpeg', context),
+                _buildCard('Gan 356 11M', '\$46.99', 'assets/images/3x3(8).jpeg', context),
+                _buildCard('Gan 356 i Carry', '\$36.99', 'assets/images/3x3(9).jpeg', context),
+                SizedBox(height: 55),
+              ],    
+            ),
           ),
         ],
       ),
@@ -60,19 +67,6 @@ class ThreeByThree extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Padding (
-              //   padding: EdgeInsets.all(9),
-              //   child: Row  (
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       Icon(
-              //         Icons.favorite_outline,
-              //         color: Color.fromRGBO(0, 161, 233, 1),
-              //         size: 30,
-              //       )
-              //     ],
-              //   ),
-              // ),
               SizedBox(height: 15),
               Hero  (
                 tag: imgPath,
