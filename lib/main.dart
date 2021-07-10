@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rubik_cube_shop/welcome.dart';
+import 'package:rubik_cube_shop/screens/welcome/welcome.dart';
 
 void main() {
   return runApp(MaterialApp (

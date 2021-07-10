@@ -1,7 +1,7 @@
-// import 'package:rubik_cube_shop/cart.dart';
-import 'package:rubik_cube_shop/home.dart';
+import 'package:rubik_cube_shop/screens/cart/cart.dart';
+import 'package:rubik_cube_shop/screens/home/home.dart';
 // import 'package:rubik_cube_shop/notification.dart';
-import 'package:rubik_cube_shop/profile.dart';
+import 'package:rubik_cube_shop/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 // import 'package:animations/animations.dart';
 
@@ -82,10 +82,10 @@ class BottomBar extends StatelessWidget {
                       size: 30,
                     ), 
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => CartScreen()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CartScreen()),
+                      );
                     },
                   ),
                   IconButton(

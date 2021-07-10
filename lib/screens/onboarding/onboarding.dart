@@ -1,4 +1,4 @@
-import 'package:rubik_cube_shop/signin.dart';
+import 'package:rubik_cube_shop/screens/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/size_config.dart';
 

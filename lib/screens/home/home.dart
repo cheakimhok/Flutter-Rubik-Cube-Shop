@@ -1,8 +1,8 @@
-import 'package:rubik_cube_shop/2x2_product.dart';
-import 'package:rubik_cube_shop/3x3_product.dart';
-import 'package:rubik_cube_shop/4x4_product.dart';
-import 'package:rubik_cube_shop/accessories_product.dart';
-import 'package:rubik_cube_shop/others_product.dart';
+import 'package:rubik_cube_shop/screens/home/2x2_product.dart';
+import 'package:rubik_cube_shop/screens/home/3x3_product.dart';
+import 'package:rubik_cube_shop/screens/home/4x4_product.dart';
+import 'package:rubik_cube_shop/screens/home/accessories_product.dart';
+import 'package:rubik_cube_shop/screens/home/others_product.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
 

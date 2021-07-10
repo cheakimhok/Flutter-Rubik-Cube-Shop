@@ -1,4 +1,4 @@
-import 'package:rubik_cube_shop/product_detail.dart';
+import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class OthersProduct extends StatelessWidget {

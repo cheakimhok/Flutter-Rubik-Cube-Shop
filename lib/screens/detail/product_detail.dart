@@ -1,4 +1,4 @@
-import 'package:rubik_cube_shop/home.dart';
+import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
 

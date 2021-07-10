@@ -1,7 +1,7 @@
-import 'package:rubik_cube_shop/product_detail.dart';
+import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:flutter/material.dart';
 
-class FourByFour extends StatelessWidget {
+class ThreeByThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +20,19 @@ class FourByFour extends StatelessWidget {
               mainAxisSpacing: 15,
               childAspectRatio: 0.72,
               children: <Widget> [
-                 _buildCard('Gan 460 M', '\$55.99', 'assets/images/4x4.jpeg', context),
-                  _buildCard('Gan 460 M Pro', '\$58.99', 'assets/images/4x4(1).jpeg', context),
-              ],
-            ) 
+                _buildCard('Gan 356 RS', '\$16.99', 'assets/images/3x3.jpeg', context),
+                _buildCard('Gan 356 Air SM', '\$31.99', 'assets/images/3x3(1).png', context),
+                _buildCard('Gan 330 Keychain', '\$7.99', 'assets/images/3x3(2).jpeg', context),
+                _buildCard('Gan 356 Air Pro', '\$33.99', 'assets/images/3x3(3).jpeg', context),
+                _buildCard('Gan 11M Duo', '\$39.99', 'assets/images/3x3(4).jpeg', context),
+                _buildCard('Gan 354 X', '\$43.99', 'assets/images/3x3(5).jpeg', context),
+                _buildCard('Gan 356 XS', '\$53.99', 'assets/images/3x3(6).jpeg', context),
+                _buildCard('Gan 356 i', '\$69.99', 'assets/images/3x3(7).jpeg', context),
+                _buildCard('Gan 356 11M', '\$46.99', 'assets/images/3x3(8).jpeg', context),
+                _buildCard('Gan 356 i Carry', '\$36.99', 'assets/images/3x3(9).jpeg', context),
+                SizedBox(height: 55),
+              ],    
+            ),
           ),
         ],
       ),
