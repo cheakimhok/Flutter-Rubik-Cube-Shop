@@ -1,5 +1,5 @@
 import 'package:rubik_cube_shop/screens/forgot_password/forgot_password.dart';
-import 'package:rubik_cube_shop/home.dart';
+import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:rubik_cube_shop/screens/sign_up/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

@@ -90,7 +90,6 @@ class ProductDetail extends StatelessWidget {
                 child: Center(
                   child: Text('Add to cart',
                     style: TextStyle(
-                      fontFamily: 'Varela',
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,   
