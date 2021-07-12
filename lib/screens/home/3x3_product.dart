@@ -28,7 +28,7 @@ class ThreeByThree extends StatelessWidget {
                 _buildCard('Gan 354 X', '\$43.99', 'assets/images/3x3(5).jpeg', context),
                 _buildCard('Gan 356 XS', '\$53.99', 'assets/images/3x3(6).jpeg', context),
                 _buildCard('Gan 356 i', '\$69.99', 'assets/images/3x3(7).jpeg', context),
-                _buildCard('Gan 356 11M', '\$46.99', 'assets/images/3x3(8).jpeg', context),
+                _buildCard('Gan 11M', '\$46.99', 'assets/images/3x3(8).jpeg', context),
                 _buildCard('Gan 356 i Carry', '\$36.99', 'assets/images/3x3(9).jpeg', context),
                 SizedBox(height: 55),
               ],    
