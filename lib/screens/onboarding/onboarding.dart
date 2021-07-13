@@ -1,6 +1,9 @@
 import 'package:rubik_cube_shop/screens/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 import 'package:rubik_cube_shop/size_config.dart';
+import 'package:rubik_cube_shop/models/onboarding.dart';
 
 class Boarding extends StatelessWidget {
   @override
@@ -19,22 +22,82 @@ class BoardingComponent extends StatefulWidget {
 
 class _BoardingComponentState extends State<BoardingComponent> {
   int currentPage = 0;
-  List<Map<String, String>> boardingData = [
-    {
-      "text": "SELECT PRODUCTS",
-      "image": "assets/images/product.png"
-    },
-    {
-      "text": "ADD TO CART",
-      "image": "assets/images/cart.png"
-    },
-    {
-      "text": "EASY PAYMENT",
-      "image": "assets/images/confirm.png"
-    },
-  ];
+  // List<Map<String, String>> boardingData = [
+  //   {
+  //     "text": "SELECT PRODUCTS",
+  //     "image": "assets/images/product.png"
+  //   },
+  //   {
+  //     "text": "ADD TO CART",
+  //     "image": "assets/images/cart.png"
+  //   },
+  //   {
+  //     "text": "EASY PAYMENT",
+  //     "image": "assets/images/confirm.png"
+  //   },
+  // ];
+  List<OnBoarding> fetchOnboarding = [];
+  bool _isLoading = true;
+  bool _isError = false;
+
+  Future<OnBoarding> fetchOnboardingData() async {
+    final url = Uri.parse('http://localhost:3000/onBoarding');
+    final response = await get(url);
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+
+      setState(() {
+        for (Map i in data) {
+          fetchOnboarding.add(OnBoarding.fromJson(i));
+        }
+        _isLoading = false;
+      });
+    } else {
+      _isError = true;
+      throw Exception('Failed to load data');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchOnboardingData();
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
+    
+    if (_isError) {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(30)
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error,
+              size: getProportionateScreenWidth(45),
+              color: Colors.grey,
+            ),
+            SizedBox(height: getProportionateScreenWidth(10)),
+            Text(
+              'Error while loading data from the server. Please try again later.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: getProportionateScreenWidth(14)
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -48,10 +111,11 @@ class _BoardingComponentState extends State<BoardingComponent> {
                      currentPage = value;
                    });
                 },
-                itemCount: boardingData.length,
+                itemCount: fetchOnboarding.length,
                 itemBuilder: (context, index) => BoardingContent(
-                image: boardingData[index]["image"],
-                text: boardingData[index]["text"],
+                  image: fetchOnboarding[index].image,
+                  title: fetchOnboarding[index].title,
+                  subtitle: fetchOnboarding[index].subtitle,
                 ),
               )
             ),
@@ -64,7 +128,7 @@ class _BoardingComponentState extends State<BoardingComponent> {
                     Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(boardingData.length, (index) => buildContainer(index: index),
+                      children: List.generate(fetchOnboarding.length, (index) => buildContainer(index: index),
                       ),
                     ),
                     Spacer(flex: 4), 
@@ -117,10 +181,12 @@ class _BoardingComponentState extends State<BoardingComponent> {
 class BoardingContent extends StatelessWidget {
   const BoardingContent({
     Key key,
-    this.text,
+    this.title,
     this.image,
+    this.subtitle,
   }) : super(key: key);
-  final String text, image;
+
+  final String title, image, subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -133,15 +199,18 @@ class BoardingContent extends StatelessWidget {
           width: getProportionateScreenWidth(235),
         ),
         Spacer(),
-        Text(text,
+        Text(
+          title,
           style: TextStyle(
             fontSize: getProportionateScreenWidth(26),
             color: Color.fromRGBO(0, 161, 233, 1),
             fontWeight: FontWeight.w700,
           )
         ),
-        Text("\n""Lorem ipsum dolor sit amet",
-        style: TextStyle(
+        SizedBox(height: 15),
+        Text(
+          subtitle,
+          style: TextStyle(
             fontSize: getProportionateScreenWidth(16),
             fontWeight: FontWeight.w500,
           ),
