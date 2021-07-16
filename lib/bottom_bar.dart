@@ -1,6 +1,6 @@
 import 'package:rubik_cube_shop/screens/cart/cart.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
-// import 'package:rubik_cube_shop/notification.dart';
+import 'package:rubik_cube_shop/screens/notification/notification.dart';
 import 'package:rubik_cube_shop/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 // import 'package:animations/animations.dart';
@@ -95,10 +95,10 @@ class BottomBar extends StatelessWidget {
                       size: 32,
                     ), 
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => NotificationScreen()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NotificationScreen()),
+                      );
                     },
                   ),
                 ],

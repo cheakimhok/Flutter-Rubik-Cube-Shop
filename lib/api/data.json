@@ -208,21 +208,21 @@
         }
     ],
 
-    "Notification": [
+    "notification": [
         {
             "id": 1,
-            "Title": "New Promotion Upcoming!",
-            "Subtitle": "All product will discount for 20%"
+            "title": "New Promotion Upcoming!",
+            "subtitle": "All product will discount for 20%"
         },
         {
             "id": 2,
-            "Title": "New Product Arrived!",
-            "Subtitle": "Check out our new products now!"
+            "title": "New Product Arrived!",
+            "subtitle": "Check out our new products now!"
         },
         {
             "id": 3,
-            "Title": "Don't Forgot Your Cart!",
-            "Subtitle": "Come back and complete your cart now!"
+            "title": "Don't Forgot Your Cart!",
+            "subtitle": "Come back and complete your cart now!"
         }
     ]
 }
