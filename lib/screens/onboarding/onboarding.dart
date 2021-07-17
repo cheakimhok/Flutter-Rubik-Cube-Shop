@@ -2,8 +2,8 @@ import 'package:rubik_cube_shop/screens/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
-import 'package:rubik_cube_shop/size_config.dart';
-import 'package:rubik_cube_shop/models/onboarding.dart';
+import 'package:rubik_cube_shop/size.dart';
+import 'package:rubik_cube_shop/models/Onboarding.dart';
 
 class Boarding extends StatelessWidget {
   @override

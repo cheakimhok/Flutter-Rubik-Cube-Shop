@@ -76,73 +76,75 @@ class _CartScreenState extends State<CartScreen> {
 Widget cartBody () {
   return ListView(
     children: <Widget> [
-      Padding(
-        padding: EdgeInsets.only(right: 25, left: 25, bottom: 25, top: 30),
-        child: Row(
-          children: <Widget> [
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                // color: Colors.grey,
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage("assets/images/3x3.jpeg"),
-                  fit: BoxFit.contain,
-                ) 
+      Column(children: List.generate(3, (index) {
+        return Padding(
+          padding: EdgeInsets.only(right: 25, left: 25, bottom: 10, top: 15),
+          child: Row(
+            children: <Widget> [
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  // color: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/3x3.jpeg"),
+                    fit: BoxFit.contain,
+                  ) 
+                ),
               ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget> [
-                  Row(
-                    children: <Widget> [
-                      SizedBox(width: 20),
-                      Text(
-                        "Gan 356 RS",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget> [
+                    Row(
+                      children: <Widget> [
+                        SizedBox(width: 20),
+                        Text(
+                          "Gan 356 RS",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 90),
-                      Icon(
-                        Icons.close,
-                        size: 28,
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: <Widget> [
-                      SizedBox(height: 50),
-                      SizedBox(width: 20),
-                      Text(
-                        "\$16.99",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(width: 30),
-                      Text(
-                        "x1",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w500
+                        SizedBox(width: 90),
+                        Icon(
+                          Icons.close,
+                          size: 28,
                         )
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-      SizedBox(height: 330), 
+                      ],
+                    ),
+                    Row(
+                      children: <Widget> [
+                        SizedBox(height: 50),
+                        SizedBox(width: 20),
+                        Text(
+                          "\$16.99",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(width: 30),
+                        Text(
+                          "x1",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500
+                          )
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        );
+      }),),
+      SizedBox(height: 60), 
       Padding(
         padding: EdgeInsets.only(left:25, right: 25),
         child: Row(

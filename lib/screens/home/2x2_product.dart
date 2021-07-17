@@ -1,7 +1,14 @@
 import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:flutter/material.dart';
 
-class TwoByTwo extends StatelessWidget {
+class TwoByTwo extends StatefulWidget {
+  @override
+  _TwoByTwoState createState() => _TwoByTwoState();
+}
+
+class _TwoByTwoState extends State<TwoByTwo> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

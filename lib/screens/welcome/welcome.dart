@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rubik_cube_shop/size_config.dart';
+import 'package:rubik_cube_shop/size.dart';
 import 'package:rubik_cube_shop/screens/onboarding/onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {

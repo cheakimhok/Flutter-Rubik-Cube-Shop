@@ -1,7 +1,34 @@
 {
-    "Home":
+    "products":
     {
-        "TwoByTwo": [
+        "productType": [
+            {
+                "id": 1,
+                "type": "twoByTwo",
+                "displayName": "2x2"
+            },
+            {
+                "id": 2,
+                "type": "threeByThree",
+                "displayName": "3x3"
+            },
+            {
+                "id": 3,
+                "type": "fourthByFourth",
+                "displayName": "4x4"
+            },
+            {
+                "id": 4,
+                "type": "others",
+                "displayName": "others"
+            },
+            {
+                "id": 5,
+                "type": "accessories",
+                "displayName": "accessories"
+            }
+        ],
+        "twoByTwo": [
             {
                 "id": 1,
                 "productName": "Gan 251 M",
@@ -27,7 +54,7 @@
                 "productImage": "assets/images/2x2(4).jpeg"
             }
         ],
-        "ThreeByThree": [
+        "threeByThree": [
             {
                 "id": 5,
                 "productName": "Gan 356 RS",
@@ -89,7 +116,7 @@
                 "productImage": "assets/images/3x3(9).jpeg"
             }
         ],
-        "FourthByFourth": [
+        "fourthByFourth": [
             {
                 "id": 15,
                 "productName": "Gan 460 M",
@@ -103,7 +130,7 @@
                 "productImage": "assets/images/4x4(1).jpeg"
             }
         ],
-        "Others": [
+        "others": [
             {
                 "id": 17,
                 "productName": "Gan Skewb M",
@@ -123,7 +150,7 @@
                 "productImage": "assets/images/megaminx.png"
             }
         ],
-        "Accessories": [
+        "accessories": [
             {
                 "id": 20,
                 "productName": "Gan Bag",
@@ -162,7 +189,6 @@
             }
         ]
     },
-
     "onBoarding": [
         {
             "id": 1,
@@ -183,8 +209,7 @@
             "subtitle": "Lorem ipsum dolor sit amet"
         }
     ],
-    
-    "Cart": [
+    "cart": [
         {
             "id": 1,
             "Productimage": "assets/images/2x2.jpeg",
@@ -207,7 +232,6 @@
             "ProductAmount": 1
         }
     ],
-
     "notification": [
         {
             "id": 1,

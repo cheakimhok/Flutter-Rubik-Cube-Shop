@@ -1,10 +1,10 @@
-import 'package:rubik_cube_shop/models/notifications.dart';
+import 'package:rubik_cube_shop/models/Notifications.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 import 'package:rubik_cube_shop/bottom_bar.dart';
-import 'package:rubik_cube_shop/size_config.dart';
+import 'package:rubik_cube_shop/size.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
