@@ -102,11 +102,7 @@ class _OthersProductState extends State<OthersProduct> {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute (
-              builder: (context) => ProductDetail(
-                assetPath: '${product.productImage}',
-                productprice: '${product.productPrice}',
-                productname: '${product.productName}'
-              )
+              builder: (context) => ProductDetail(product)
             )
           );
         },
@@ -125,13 +121,13 @@ class _OthersProductState extends State<OthersProduct> {
             children: [
               SizedBox(height: 15),
               Hero(
-                tag: '${product.productImage}',
+                tag: product.productImage,
                 child: Container (
                   height: 120,
                   width: 120,
                   decoration: BoxDecoration (
                     image: DecorationImage (
-                      image: AssetImage ('${product.productImage}'),
+                      image: AssetImage (product.productImage),
                       fit: BoxFit.contain,
                     )
                   ),
@@ -139,7 +135,7 @@ class _OthersProductState extends State<OthersProduct> {
               ),
               SizedBox(height: 10),
               Text(
-                '${product.productPrice}',
+                '\$${product.productPrice}',
                 style: TextStyle(
                 color: Color.fromRGBO(0, 161, 233, 1),
                 fontWeight: FontWeight.w600,
@@ -147,7 +143,7 @@ class _OthersProductState extends State<OthersProduct> {
               ),
               SizedBox(height: 8),
               Text(
-                '${product.productName}',
+                product.productName,
                 style: TextStyle(
                 color: Color(0xFF575E67),
                 fontSize: 15)

@@ -1,11 +1,18 @@
+import 'package:rubik_cube_shop/models/Product.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
 
-class ProductDetail extends StatelessWidget {
-  final assetPath, productprice, productname;
+class ProductDetail extends StatefulWidget {
+  final Product product;
 
-  ProductDetail({this.assetPath, this.productprice, this.productname});
+  ProductDetail(this.product);
+
+  @override
+  _ProductDetailState createState() => _ProductDetailState();
+}
+
+class _ProductDetailState extends State<ProductDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +48,8 @@ class ProductDetail extends StatelessWidget {
         children: [
             SizedBox(height: 15.0),
             Hero(
-              tag: assetPath,
-              child: Image.asset(assetPath,
+              tag: '${widget.product.productImage}',
+              child: Image.asset('${widget.product.productImage}',
               height: 280,
               width: 280,
               fit: BoxFit.contain
@@ -51,7 +58,7 @@ class ProductDetail extends StatelessWidget {
             SizedBox(height: 20),
             Center(
               child: Text(
-                productprice,
+                '${widget.product.productName}',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -61,16 +68,18 @@ class ProductDetail extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Center(
-              child: Text(productname,
-                  style: TextStyle(
-                      color: Color(0xFF575E67),
-                      fontSize: 24)),
+              child: Text(
+                '\$${widget.product.productPrice}',
+                style: TextStyle(
+                  color: Color(0xFF575E67),
+                  fontSize: 24)
+                ),
             ),
             SizedBox(height: 20),
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width - 50.0,
-                child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                child: Text('${widget.product.productDetail}',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                       fontSize: 19,
