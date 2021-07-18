@@ -5,6 +5,10 @@ import 'package:rubik_cube_shop/screens/home/accessories_product.dart';
 import 'package:rubik_cube_shop/screens/home/others_product.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
+import 'package:rubik_cube_shop/size.dart';
+import 'package:rubik_cube_shop/provider.dart';
+import 'package:rubik_cube_shop/models/ProductList.dart';
+import 'package:rubik_cube_shop/models/ProductType.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,15 +29,62 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>  with SingleTickerProviderStateMixin {
   TabController _tabController;
+  ProductList _productList;
+  bool _isLoading = true;
+  bool _isError = false;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
+
+    DataProvider.fetchProductListData().then((value) {
+      setState(() {
+        _productList = value;
+        _isLoading = false;
+      });
+    }).catchError((error) {
+      print('Error: $error');
+      setState(() {
+        _isError = true;
+        _isLoading = false;
+      });
+    }); 
   }
   
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
+    
+    if (_isError) {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(30)
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error,
+              size: getProportionateScreenWidth(45),
+              color: Colors.grey,
+            ),
+            SizedBox(height: getProportionateScreenWidth(10)),
+            Text(
+              'Error while loading data from the server. Please try again later.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: getProportionateScreenWidth(14)
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -103,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen>  with SingleTickerProviderState
                   )),
               ),
               Tab(
-                child: Text('\tOthers',
+                child: Text('\tOther',
                   style: TextStyle(
                     fontSize: 24,
                   )),

@@ -1,9 +1,73 @@
+import 'package:rubik_cube_shop/models/Product.dart';
+import 'package:rubik_cube_shop/models/ProductList.dart';
+import 'package:rubik_cube_shop/provider.dart';
 import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:rubik_cube_shop/size.dart';
 
-class OthersProduct extends StatelessWidget {
+class OthersProduct extends StatefulWidget {
+  @override
+  _OthersProductState createState() => _OthersProductState();
+}
+
+class _OthersProductState extends State<OthersProduct> {
+  ProductList _productList;
+  bool _isLoading = true;
+  bool _isError = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    DataProvider.fetchProductListData().then((value) {
+      setState(() {
+        _productList = value;
+        _isLoading = false;
+      });
+    }).catchError((error) {
+      print('Error: $error');
+      setState(() {
+        _isError = true;
+        _isLoading = false;
+      });
+    }); 
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
+    
+    if (_isError) {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(30)
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error,
+              size: getProportionateScreenWidth(45),
+              color: Colors.grey
+            ),
+            SizedBox(height: getProportionateScreenWidth(10)),
+            Text(
+              'Error while loading data from the server. Please try again later.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: getProportionateScreenWidth(14)
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    final products = _productList.others;
+    
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
       body: ListView(
@@ -19,11 +83,11 @@ class OthersProduct extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 15,
               childAspectRatio: 0.72,
-              children: <Widget> [
-                _buildCard('Gan Skewb M', '\$21.99', 'assets/images/skewb.jpeg', context),
-                _buildCard('Gan Pyraminx M', '\$18.99', 'assets/images/pyraminx.jpeg', context),
-                _buildCard('Gan Megaminx M', '\$57.99', 'assets/images/megaminx.png', context),
-              ],
+              children: products.map<Widget> (
+                (index) {
+                  return _buildCard(index);
+                }
+              ).toList()
             ) 
           ),
         ],
@@ -31,7 +95,7 @@ class OthersProduct extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(String name, String price, String imgPath, context) {
+  Widget _buildCard(Product product) {
     return Padding (
       padding: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 10),
       child: InkWell(
@@ -39,9 +103,9 @@ class OthersProduct extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute (
               builder: (context) => ProductDetail(
-                assetPath: imgPath,
-                productprice: price,
-                productname: name
+                assetPath: '${product.productImage}',
+                productprice: '${product.productPrice}',
+                productname: '${product.productName}'
               )
             )
           );
@@ -60,14 +124,14 @@ class OthersProduct extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 15),
-              Hero  (
-                tag: imgPath,
+              Hero(
+                tag: '${product.productImage}',
                 child: Container (
                   height: 120,
                   width: 120,
                   decoration: BoxDecoration (
                     image: DecorationImage (
-                      image: AssetImage (imgPath),
+                      image: AssetImage ('${product.productImage}'),
                       fit: BoxFit.contain,
                     )
                   ),
@@ -75,7 +139,7 @@ class OthersProduct extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                price,
+                '${product.productPrice}',
                 style: TextStyle(
                 color: Color.fromRGBO(0, 161, 233, 1),
                 fontWeight: FontWeight.w600,
@@ -83,7 +147,7 @@ class OthersProduct extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                name,
+                '${product.productName}',
                 style: TextStyle(
                 color: Color(0xFF575E67),
                 fontSize: 15)

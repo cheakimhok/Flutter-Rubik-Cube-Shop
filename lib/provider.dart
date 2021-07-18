@@ -4,7 +4,7 @@ import 'package:rubik_cube_shop/models/ProductList.dart';
 
 class DataProvider {
   static Future<ProductList> fetchProductListData() async {
-    final url = Uri.parse('http://localhost:3000/productTypes');
+    final url = Uri.parse('http://localhost:3000/products');
     final response = await get(url);
 
     if (response.statusCode == 200) {
