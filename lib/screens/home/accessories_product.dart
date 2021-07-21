@@ -90,7 +90,7 @@ class _AccessoriesProductState extends State<AccessoriesProduct> {
               ).toList()
             ),
           ),
-          SizedBox(height: 55),
+          SizedBox(height: 250),
         ],
       ),
     );

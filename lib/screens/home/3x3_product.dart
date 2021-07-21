@@ -83,11 +83,16 @@ class _ThreeByThreeState extends State<ThreeByThree> {
               crossAxisSpacing: 10,
               mainAxisSpacing: 15,
               childAspectRatio: 0.72,
-              children: products.map<Widget>((e) {
-                return _buildCard(e);
-              }).toList()
+              children: products.map<Widget> (
+                (index) {
+                return _buildCard(index);
+                }
+              ).toList()
             ) 
           ),
+          SizedBox(height: 100),
+          SizedBox(height: 100),
+          SizedBox(height: 100),
         ],
       ),
     );

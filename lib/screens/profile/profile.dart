@@ -93,18 +93,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ProfileCard(
                   text: "Cheakimhok Mao",
                   icon: Icons.person_outline,
+                  edit: Icons.edit_outlined,
                 ),
                 ProfileCard(
                   text: "cmao1@paragoniu.edu.kh",
                   icon: Icons.email_outlined,
+                  edit: Icons.edit_outlined,
                 ),
                 ProfileCard(
                   text: "+855 23 880 880",
                   icon: Icons.call_outlined,
+                  edit: Icons.edit_outlined,
                 ),
                 ProfileCard(
                   text: "Phnom Penh",
-                  icon: Icons.place_outlined
+                  icon: Icons.place_outlined,
+                  edit: Icons.edit_outlined,
+                ),
+                ProfileCard(
+                  text: "Log Out",
+                  icon: Icons.logout_outlined,   
                 ),
               ],
             ),
@@ -138,10 +146,12 @@ class ProfileCard extends StatelessWidget {
     Key key,
     @required this.text,
     @required this.icon,
+    @required this.edit,
   }) : super(key: key);
 
   final String text;
   final IconData icon;
+  final IconData edit;
 
   @override
   Widget build(BuildContext context) {
@@ -170,7 +180,7 @@ class ProfileCard extends StatelessWidget {
               ),
             ),
             Icon(
-              Icons.edit_outlined,
+              edit,
               color: Colors.grey
             ),
           ],
