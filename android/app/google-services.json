@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "533421921403",
+    "project_id": "rubik-cube-shop",
+    "storage_bucket": "rubik-cube-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533421921403:android:382081b94a32d201273ede",
+        "android_client_info": {
+          "package_name": "com.example.rubik_cube_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533421921403-gect25td6cuelmkbtp5qb7an7nc0qgfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi_PuCGnQWdWST2u5CST7tlG6ZwOsG--0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533421921403-gect25td6cuelmkbtp5qb7an7nc0qgfi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "533421921403-3eh8uluer9ebv0rkekkp2qj24sbtcg1u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rubikCubeShop"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

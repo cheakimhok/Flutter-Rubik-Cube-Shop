@@ -3,6 +3,7 @@ import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:rubik_cube_shop/screens/sign_up/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -10,10 +11,15 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController(); 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        key: _formKey,
         margin: EdgeInsets.only(bottom: 50),
         child: Column(
           children: <Widget> [
@@ -38,19 +44,7 @@ class _SignInState extends State<SignIn> {
                 child: Column(
                   children: <Widget> [
                     _textInput(hint:"Email", icon:Icons.email),
-                    _textInput(hint:"Password", icon:Icons.vpn_key),
-                    // Container(
-                    //   margin: EdgeInsets.only(top:30, bottom: 140),
-                    //   alignment: Alignment.center,
-                    //   text: TextSpan(
-                    //     "Forgot Password?", textAlign: TextAlign.center,
-                    //     style: TextStyle(
-                    //       color: Color.fromRGBO(0, 161, 233, 1),
-                    //       fontWeight: FontWeight.w400,
-                    //       fontSize: 18,
-                    //     ),
-                    //   )
-                    // ),
+                    _passwordInput(hint:"Password", icon:Icons.vpn_key),
                     SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
@@ -80,11 +74,22 @@ class _SignInState extends State<SignIn> {
                           borderRadius: BorderRadius.circular(20)
                         ),
                         color: Color.fromRGBO(0, 161, 233, 1),
-                        onPressed: () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => HomeScreen()),
-                          )
+                        onPressed: () async {
+                          try {
+                            FirebaseUser user =
+                              (await FirebaseAuth.instance.signInWithEmailAndPassword(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                              )).user;
+                            if (user != null) {
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                            }
+                          } catch (e) {
+                            print(e);
+                            _emailController.text = "";
+                            _passwordController.text = "";
+                            // TODO: AlertDialog with error
+                          }
                         },
                         child: Text("Sign In",
                           style: TextStyle(
@@ -136,18 +141,35 @@ class _SignInState extends State<SignIn> {
             width: 2
         ),
         borderRadius: BorderRadius.all(Radius.circular(20)),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.grey,
-        //     blurRadius: 2.0,
-        //     offset: Offset(0,2),
-        //   )
-        // ],
         color: Colors.white,
       ),
       padding: EdgeInsets.only(top: 5, bottom: 5 ,left: 10),
       child: TextFormField(
-        controller: controller,
+        controller: _emailController,
+        decoration: InputDecoration(
+          border:  InputBorder.none,
+          hintText:  hint,
+          prefixIcon: Icon(icon),
+        ),
+      ),
+    );
+  }
+
+  Widget _passwordInput({controller,hint,icon}) {
+    return Container(
+      margin: EdgeInsets.only(top: 30),
+      decoration: BoxDecoration(
+        border: Border.all(
+            color: Colors.grey,
+            width: 2
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        color: Colors.white,
+      ),
+      padding: EdgeInsets.only(top: 5, bottom: 5 ,left: 10),
+      child: TextFormField(
+        obscureText: true,
+        controller: _passwordController,
         decoration: InputDecoration(
           border:  InputBorder.none,
           hintText:  hint,
