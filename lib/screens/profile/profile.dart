@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
+import 'package:rubik_cube_shop/screens/sign_in/sign_in.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final auth = FirebaseAuth.instance;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,25 +98,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   text: "Cheakimhok Mao",
                   icon: Icons.person_outline,
                   edit: Icons.edit_outlined,
+                  press: () {},
                 ),
                 ProfileCard(
                   text: "cmao1@paragoniu.edu.kh",
                   icon: Icons.email_outlined,
                   edit: Icons.edit_outlined,
+                  press: () {},
                 ),
                 ProfileCard(
                   text: "+855 23 880 880",
                   icon: Icons.call_outlined,
                   edit: Icons.edit_outlined,
+                  press: () {},
                 ),
                 ProfileCard(
                   text: "Phnom Penh",
                   icon: Icons.place_outlined,
                   edit: Icons.edit_outlined,
+                  press: () {},
                 ),
                 ProfileCard(
                   text: "Log Out",
-                  icon: Icons.logout_outlined,   
+                  icon: Icons.logout_outlined, 
+                  edit: null,
+                  press: () {
+                    auth.signOut();
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignIn()));
+                  },  
                 ),
               ],
             ),
@@ -147,11 +160,13 @@ class ProfileCard extends StatelessWidget {
     @required this.text,
     @required this.icon,
     @required this.edit,
+    @required this.press,
   }) : super(key: key);
 
   final String text;
   final IconData icon;
   final IconData edit;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +176,7 @@ class ProfileCard extends StatelessWidget {
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Color(0xFFF5F6F9),
-        onPressed: () {},
+        onPressed: press,
         child: Row(
           children: [
             Icon(
