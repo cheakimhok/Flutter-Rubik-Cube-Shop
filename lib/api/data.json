@@ -237,24 +237,24 @@
     "cart": [
         {
             "id": 1,
-            "Productimage": "assets/images/2x2.jpeg",
-            "ProductName": "Gan 251 M",
+            "productImage": "assets/images/2x2.jpeg",
+            "productName": "Gan 251 M",
             "productPrice": "23.99",
-            "ProductAmount": 1
+            "productAmount": 1
         },
         {
             "id": 2,
-            "Productimage": "assets/images/3x3.jpeg",
-            "ProductName": "Gan 356 RS",
+            "productImage": "assets/images/3x3.jpeg",
+            "productName": "Gan 356 RS",
             "productPrice": "16.99",
-            "ProductAmount": 1
+            "productAmount": 1
         },
         {
             "id": 3,
-            "Productimage": "assets/images/4x4.jpeg",
-            "ProductName": "Gan 460 M",
+            "productImage": "assets/images/4x4.jpeg",
+            "productName": "Gan 460 M",
             "productPrice": "55.99",
-            "ProductAmount": 1
+            "productAmount": 1
         }
     ],
     "notification": [
