@@ -131,7 +131,7 @@ class _ThreeByThreeState extends State<ThreeByThree> {
                   width: 120,
                   decoration: BoxDecoration (
                     image: DecorationImage (
-                      image: AssetImage (product.productImage),
+                      image: NetworkImage (product.productImage),
                       fit: BoxFit.contain,
                     )
                   ),

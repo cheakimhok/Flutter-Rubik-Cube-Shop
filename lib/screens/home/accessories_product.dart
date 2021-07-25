@@ -129,7 +129,7 @@ class _AccessoriesProductState extends State<AccessoriesProduct> {
                   width: 120,
                   decoration: BoxDecoration (
                     image: DecorationImage (
-                      image: AssetImage (product.productImage),
+                      image: NetworkImage (product.productImage),
                       fit: BoxFit.contain,
                     )
                   ),

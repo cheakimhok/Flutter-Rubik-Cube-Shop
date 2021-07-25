@@ -80,7 +80,7 @@ class _RatingProductState extends State<RatingProduct> {
                 Text(
                   'Cheakimhok Mao',
                   style: TextStyle(
-                    fontSize: 20,
+                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: Colors.black54
                   ),
@@ -100,7 +100,7 @@ class _RatingProductState extends State<RatingProduct> {
                   direction: Axis.horizontal,
                   allowHalfRating: true,
                   itemCount: 5,
-                  itemSize: 40,
+                  itemSize: 45,
                   itemPadding: EdgeInsets.symmetric(
                     horizontal: getProportionateScreenWidth(1)
                   ),

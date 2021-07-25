@@ -65,7 +65,7 @@ class _SignInState extends State<SignIn> {
                         ]
                       )
                     ),
-                    SizedBox(height: 150,),
+                    SizedBox(height: 70,),
                     SizedBox(
                       width: double.infinity,
                       height: 60,

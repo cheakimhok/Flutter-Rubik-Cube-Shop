@@ -68,7 +68,7 @@ class _ProductDetailState extends State<ProductDetail> {
           SizedBox(height: 15.0),
           Hero(
             tag: '${widget.product.productImage}',
-            child: Image.asset('${widget.product.productImage}',
+            child: Image.network('${widget.product.productImage}',
             height: 280,
             width: 280,
             fit: BoxFit.contain

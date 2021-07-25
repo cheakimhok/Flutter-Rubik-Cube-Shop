@@ -193,7 +193,7 @@ class BoardingContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         Spacer(),
-        Image.asset(
+        Image.network(
           image,
           height: getProportionateScreenHeight(265),
           width: getProportionateScreenWidth(235),

@@ -33,28 +33,28 @@
                 "id": 1,
                 "productName": "Gan 251 M",
                 "productPrice": "23.99",
-                "productImage": "assets/images/2x2.jpeg",
+                "productImage": "https://i.postimg.cc/DymNyNXG/2x2.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 2,
                 "productName": "Gan 251 M Pro",
                 "productPrice": "27.99",
-                "productImage": "assets/images/2x2(1).jpeg",
+                "productImage": "https://i.postimg.cc/FsqBfxyB/2x2-1.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 3,
                 "productName": "Gan 249 v2",
                 "productPrice": "21.99",
-                "productImage": "assets/images/2x2(2).jpeg",
+                "productImage": "https://i.postimg.cc/KYQ7TGX8/2x2-2.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 4,
                 "productName": "Gan 249 v2 Pro",
                 "productPrice": "14.99",
-                "productImage": "assets/images/2x2(4).jpeg",
+                "productImage": "https://i.postimg.cc/xC4Ks61r/2x2-4.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             }
         ],
@@ -63,70 +63,70 @@
                 "id": 5,
                 "productName": "Gan 356 RS",
                 "productPrice": "16.99",
-                "productImage": "assets/images/3x3.jpeg",
+                "productImage": "https://i.postimg.cc/Bvsb0HVj/3x3.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 6,
                 "productName": "Gan 356 Air SM",
                 "productPrice": "31.99",
-                "productImage": "assets/images/3x3(1).png",
+                "productImage": "https://i.postimg.cc/8zdktszN/3x3-1.png",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 7,
                 "productName": "Gan 330 Keychain",
                 "productPrice": "7.99",
-                "productImage": "assets/images/3x3(2).jpeg",
+                "productImage": "https://i.postimg.cc/Bvg6QbrM/3x3-2.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 8,
                 "productName": "Gan 356 Air Pro",
                 "productPrice": "33.99",
-                "productImage": "assets/images/3x3(3).jpeg",
+                "productImage": "https://i.postimg.cc/C1xKZYYY/3x3-3.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 9,
                 "productName": "Gan 11M Duo",
                 "productPrice": "39.99",
-                "productImage": "assets/images/3x3(4).jpeg",
+                "productImage": "https://i.postimg.cc/CxpLGbYc/3x3-4.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 10,
                 "productName": "Gan 356 X",
                 "productPrice": "43.99",
-                "productImage": "assets/images/3x3(5).jpeg",
+                "productImage": "https://i.postimg.cc/rsdFJJKP/3x3-5.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 11,
                 "productName": "Gan 356 XS",
                 "productPrice": "53.99",
-                "productImage": "assets/images/3x3(6).jpeg",
+                "productImage": "https://i.postimg.cc/NFWGPHXf/3x3-6.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 12,
                 "productName": "Gan 356 i",
                 "productPrice": "69.99",
-                "productImage": "assets/images/3x3(7).jpeg",
+                "productImage": "https://i.postimg.cc/PfcqqB7s/3x3-7.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 13,
                 "productName": "Gan 11 M",
                 "productPrice": "46.99",
-                "productImage": "assets/images/3x3(8).jpeg",
+                "productImage": "https://i.postimg.cc/d1NVrXtC/3x3-8.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 14,
                 "productName": "Gan 356 i Carry",
                 "productPrice": "36.99",
-                "productImage": "assets/images/3x3(9).jpeg",
+                "productImage": "https://i.postimg.cc/SKyS5qn8/3x3-9.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             }
         ],
@@ -135,14 +135,14 @@
                 "id": 15,
                 "productName": "Gan 460 M",
                 "productPrice": "55.99",
-                "productImage": "assets/images/4x4.jpeg",
+                "productImage": "https://i.postimg.cc/SKqPfxn0/4x4.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 16,
                 "productName": "Gan 460 M Pro",
                 "productPrice": "58.99",
-                "productImage": "assets/images/4x4(1).jpeg",
+                "productImage": "https://i.postimg.cc/W4nHWcZd/4x4-1.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             }
         ],
@@ -151,21 +151,21 @@
                 "id": 17,
                 "productName": "Gan Skewb M",
                 "productPrice": "21.99",
-                "productImage": "assets/images/skewb.jpeg",
+                "productImage": "https://i.postimg.cc/N0zzq7Nt/skewb.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 18,
                 "productName": "Gan Pyraminx M",
                 "productPrice": "18.99",
-                "productImage": "assets/images/pyraminx.jpeg",
+                "productImage": "https://i.postimg.cc/256KKX7T/pyraminx.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 19,
                 "productName": "Gan Megaminx M",
                 "productPrice": "57.99",
-                "productImage": "assets/images/megaminx.png",
+                "productImage": "https://i.postimg.cc/YC8P8wYh/megaminx.png",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             }
         ],
@@ -174,42 +174,42 @@
                 "id": 20,
                 "productName": "Gan Bag",
                 "productPrice": "1.99",
-                "productImage": "assets/images/bag.png",
+                "productImage": "https://i.postimg.cc/B6JX3Hth/bag.png",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 21,
                 "productName": "Gan Lube",
                 "productPrice": "2.99",
-                "productImage": "assets/images/lube.jpeg",
+                "productImage": "https://i.postimg.cc/W3St1zks/lube.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 22,
                 "productName": "Gan Caps",
                 "productPrice": "5.99",
-                "productImage": "assets/images/cap.png",
+                "productImage": "https://i.postimg.cc/rsms0T1x/cap.png",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 23,
                 "productName": "Gan Stickers",
                 "productPrice": "4.99",
-                "productImage": "assets/images/sticker.jpeg",
+                "productImage": "https://i.postimg.cc/NFzMRnDV/sticker.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 24,
                 "productName": "Gan GES",
                 "productPrice": "6.99",
-                "productImage": "assets/images/ges.jpeg",
+                "productImage": "https://i.postimg.cc/Kv14mZvy/ges.jpg",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 "id": 25,
                 "productName": "Gan Timer",
                 "productPrice": "15.99",
-                "productImage": "assets/images/timer.png",
+                "productImage": "https://i.postimg.cc/9QTMqJ78/timer.png",
                 "productDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             }
         ]
@@ -217,19 +217,19 @@
     "onBoarding": [
         {
             "id": 1,
-            "image": "assets/images/product.png",
+            "image": "https://i.postimg.cc/1Rfv6j9r/product.png",
             "title": "SELECT PRODUCTS",
             "subtitle": "Lorem ipsum dolor sit amet"
         },
         {
             "id": 2,
-            "image": "assets/images/cart.png",
+            "image": "https://i.postimg.cc/d1X3yX4f/cart.png",
             "title": "ADD TO CART",
             "subtitle": "Lorem ipsum dolor sit amet"
         },
         {
             "id": 3,
-            "image": "assets/images/confirm.png",
+            "image": "https://i.postimg.cc/gjZJqD72/confirm.png",
             "title": "EASY PAYMENT",
             "subtitle": "Lorem ipsum dolor sit amet"
         }
@@ -237,21 +237,21 @@
     "cart": [
         {
             "id": 1,
-            "productImage": "assets/images/2x2.jpeg",
+            "productImage": "https://i.postimg.cc/DymNyNXG/2x2.jpg",
             "productName": "Gan 251 M",
             "productPrice": "23.99",
             "productAmount": 1
         },
         {
             "id": 2,
-            "productImage": "assets/images/3x3.jpeg",
+            "productImage": "https://i.postimg.cc/Bvsb0HVj/3x3.jpg",
             "productName": "Gan 356 RS",
             "productPrice": "16.99",
             "productAmount": 1
         },
         {
             "id": 3,
-            "productImage": "assets/images/4x4.jpeg",
+            "productImage": "https://i.postimg.cc/SKqPfxn0/4x4.jpg",
             "productName": "Gan 460 M",
             "productPrice": "55.99",
             "productAmount": 1

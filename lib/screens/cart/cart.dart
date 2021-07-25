@@ -154,7 +154,7 @@ class _CartScreenState extends State<CartScreen> {
                     // color: Colors.grey,
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: AssetImage(
+                      image: NetworkImage(
                         '${fetchCart[index].productImage}', 
                       ), 
                       fit: BoxFit.contain,

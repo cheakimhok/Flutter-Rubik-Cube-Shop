@@ -126,7 +126,7 @@ class _FourByFourState extends State<FourByFour> {
                   width: 120,
                   decoration: BoxDecoration (
                     image: DecorationImage (
-                      image: AssetImage (product.productImage),
+                      image: NetworkImage (product.productImage),
                       fit: BoxFit.contain,
                     )
                   ),
