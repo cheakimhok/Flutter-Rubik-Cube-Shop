@@ -18,7 +18,7 @@ class _CartScreenState extends State<CartScreen> {
   bool _isError = false;
 
   Future<Cart> fetchCartData() async {
-    final url = Uri.parse('http://localhost:3000/cart');
+    final url = Uri.parse('https://cheakimhok-rubik-cube-shop-api.herokuapp.com/cart');
     final response = await get(url);
 
     if (response.statusCode == 200) {

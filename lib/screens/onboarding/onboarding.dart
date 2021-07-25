@@ -41,7 +41,7 @@ class _BoardingComponentState extends State<BoardingComponent> {
   bool _isError = false;
 
   Future<OnBoarding> fetchOnboardingData() async {
-    final url = Uri.parse('http://localhost:3000/onBoarding');
+    final url = Uri.parse('https://cheakimhok-rubik-cube-shop-api.herokuapp.com/onBoarding');
     final response = await get(url);
 
     if (response.statusCode == 200) {

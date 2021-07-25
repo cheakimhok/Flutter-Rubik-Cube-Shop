@@ -18,7 +18,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   bool _isError = false;
 
   Future<Notification> fetchNotificationData() async {
-    final url = Uri.parse('http://localhost:3000/notification');
+    final url = Uri.parse('https://cheakimhok-rubik-cube-shop-api.herokuapp.com/notification');
     final response = await get(url);
 
     if (response.statusCode == 200) {

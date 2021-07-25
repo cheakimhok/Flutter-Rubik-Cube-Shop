@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
+import 'package:rubik_cube_shop/models/Product.dart';
+import 'package:rubik_cube_shop/provider.dart';
+import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:rubik_cube_shop/size.dart';
 
 class RatingProduct extends StatefulWidget {
+  final Product product;
+
+  RatingProduct(this.product);
+
   @override
   _RatingProductState createState() => _RatingProductState();
 }
 
 class _RatingProductState extends State<RatingProduct> {
   double rating = 0;
+
+  void _onSubmitClick() async {
+    await DataProvider.addRating(
+      widget.product.id,
+      'Cheakimhok Mao',
+      rating,
+    );
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProductDetail(widget.product)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,8 +65,7 @@ class _RatingProductState extends State<RatingProduct> {
                 color: Color.fromRGBO(255, 255, 255, 1),
                 size: 35,
               ), 
-              onPressed: () {
-              },
+              onPressed: () {},
             ),
           )
         ],
@@ -113,24 +129,24 @@ class _RatingProductState extends State<RatingProduct> {
                   },
                 ),
                 SizedBox(height: 180),
-                Center(
-                  child: Container(
-                    width: 380,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      color: Color.fromRGBO(0, 161, 233, 1)
+                SizedBox(
+                  width: getProportionateScreenWidth(310),
+                  height: getProportionateScreenHeight(56),
+                  // ignore: deprecated_member_use
+                  child: FlatButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
                     ),
-                    child: Center(
-                      child: Text('Submit',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,   
-                        ),
-                      )
+                    color: Color.fromRGBO(0, 161, 233, 1),
+                    onPressed: _onSubmitClick,
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        fontSize: getProportionateScreenWidth(18),
+                        color: Colors.white,
+                      ),
                     )
-                  )
+                  ),
                 )
               ],
             ),

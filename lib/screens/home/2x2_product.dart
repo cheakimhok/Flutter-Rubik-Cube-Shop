@@ -37,7 +37,12 @@ class _TwoByTwoState extends State<TwoByTwo> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return Center(child: CircularProgressIndicator());
+      return Padding(
+        padding: EdgeInsets.only(bottom: 300),
+        child: Center(
+          child: CircularProgressIndicator()
+        )
+      );
     }
     
     if (_isError) {

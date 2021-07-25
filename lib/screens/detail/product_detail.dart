@@ -1,4 +1,6 @@
 import 'package:rubik_cube_shop/models/Product.dart';
+import 'package:rubik_cube_shop/models/Rating.dart';
+import 'package:rubik_cube_shop/provider.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
@@ -14,6 +16,30 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
+  List<Rating> _rating;
+
+  @override
+  void initState() {
+    super.initState();
+
+    DataProvider.fetchRatingData(widget.product.id).then((value) {
+      setState(() {
+        _rating = value;
+      });
+    });
+  }
+
+  void _onAddRatingClick() async {
+    final route = MaterialPageRoute<Rating>(
+        builder: (context) => RatingProduct(widget.product));
+    final result = await Navigator.pushReplacement(context, route);
+    if (result != null) {
+      setState(() {
+        _rating.add(result);
+      });
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +78,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 color: Color.fromRGBO(255, 255, 255, 1),
                 size: 35,
               ), 
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RatingProduct()),
-                );
-              },
+              onPressed: _onAddRatingClick
             ),
           )
         ],
