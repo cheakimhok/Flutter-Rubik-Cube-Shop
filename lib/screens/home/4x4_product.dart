@@ -1,3 +1,4 @@
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:rubik_cube_shop/models/Product.dart';
 import 'package:rubik_cube_shop/models/ProductList.dart';
 import 'package:rubik_cube_shop/provider.dart';
@@ -157,23 +158,18 @@ class _FourByFourState extends State<FourByFour> {
               SizedBox(height: 5),
               Padding (
                 padding: EdgeInsets.only(left: 5, right: 5),
-                child: Row (
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon (
-                      Icons.shopping_basket,
-                      color: Color.fromRGBO(0, 161, 233, 1),
-                      size: 18,
-                    ),
-                    Text(
-                      'Add to cart',
-                      style: TextStyle(
-                        color: Color.fromRGBO(0, 161, 233, 1),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      )
-                    )
-                  ],
+                child: RatingBarIndicator (
+                  rating: 4.5,
+                  direction: Axis.horizontal,
+                  itemCount: 5,
+                  itemSize: 22,
+                  itemPadding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(1)
+                  ),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.star,
+                    color: Color.fromRGBO(253, 204, 13, 1),
+                  ),
                 ),
               )
             ]

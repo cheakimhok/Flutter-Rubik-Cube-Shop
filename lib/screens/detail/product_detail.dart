@@ -2,6 +2,7 @@ import 'package:rubik_cube_shop/models/Product.dart';
 import 'package:rubik_cube_shop/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/bottom_bar.dart';
+import 'package:rubik_cube_shop/screens/rating/rating.dart';
 
 class ProductDetail extends StatefulWidget {
   final Product product;
@@ -42,71 +43,89 @@ class _ProductDetailState extends State<ProductDetail> {
             fontWeight: FontWeight.w600,
           ),
         ),
+        actions: <Widget> [
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: IconButton(
+              icon: Icon(
+                Icons.reviews_outlined,
+                color: Color.fromRGBO(255, 255, 255, 1),
+                size: 35,
+              ), 
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RatingProduct()),
+                );
+              },
+            ),
+          )
+        ],
       ),
 
       body: ListView(
         children: [
-            SizedBox(height: 15.0),
-            Hero(
-              tag: '${widget.product.productImage}',
-              child: Image.asset('${widget.product.productImage}',
-              height: 280,
-              width: 280,
-              fit: BoxFit.contain
+          SizedBox(height: 15.0),
+          Hero(
+            tag: '${widget.product.productImage}',
+            child: Image.asset('${widget.product.productImage}',
+            height: 280,
+            width: 280,
+            fit: BoxFit.contain
+            )
+          ),
+          SizedBox(height: 20),
+          Center(
+            child: Text(
+              '${widget.product.productName}',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(0, 161, 233, 1)
               )
             ),
-            SizedBox(height: 20),
-            Center(
-              child: Text(
-                '${widget.product.productName}',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(0, 161, 233, 1)
-                )
+          ),
+          SizedBox(height: 10),
+          Center(
+            child: Text(
+              '\$${widget.product.productPrice}',
+              style: TextStyle(
+                color: Color(0xFF575E67),
+                fontSize: 24)
+              ),
+          ),
+          SizedBox(height: 20),
+          Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width - 50.0,
+              child: Text('${widget.product.productDetail}',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                    fontSize: 19,
+                    color: Color(0xFFB4B8B9))
               ),
             ),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
-                '\$${widget.product.productPrice}',
-                style: TextStyle(
-                  color: Color(0xFF575E67),
-                  fontSize: 24)
-                ),
-            ),
-            SizedBox(height: 20),
-            Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width - 50.0,
-                child: Text('${widget.product.productDetail}',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                      fontSize: 19,
-                      color: Color(0xFFB4B8B9))
-                ),
+          ),
+          SizedBox(height: 60),
+          Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width - 50.0,
+              height: 60.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.0),
+                color: Color.fromRGBO(0, 161, 233, 1)
               ),
-            ),
-            SizedBox(height: 60),
-            Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width - 50.0,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Color.fromRGBO(0, 161, 233, 1)
-                ),
-                child: Center(
-                  child: Text('Add to cart',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,   
-                    ),
-                  )
+              child: Center(
+                child: Text('Add to cart',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,   
+                  ),
                 )
               )
             )
+          )
         ]
       ),
       floatingActionButton: Container(

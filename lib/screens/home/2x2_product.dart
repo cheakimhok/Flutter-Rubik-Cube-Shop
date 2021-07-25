@@ -4,6 +4,7 @@ import 'package:rubik_cube_shop/provider.dart';
 import 'package:rubik_cube_shop/screens/detail/product_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:rubik_cube_shop/size.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class TwoByTwo extends StatefulWidget {
   @override
@@ -159,23 +160,18 @@ class _TwoByTwoState extends State<TwoByTwo> {
               SizedBox(height: 5),
               Padding (
                 padding: EdgeInsets.only(left: 5, right: 5),
-                child: Row (
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon (
-                      Icons.shopping_basket,
-                      color: Color.fromRGBO(0, 161, 233, 1),
-                      size: 18,
-                    ),
-                    Text(
-                      'Add to cart',
-                      style: TextStyle(
-                        color: Color.fromRGBO(0, 161, 233, 1),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      )
-                    )
-                  ],
+                child: RatingBarIndicator (
+                  rating: 4.5,
+                  direction: Axis.horizontal,
+                  itemCount: 5,
+                  itemSize: 22,
+                  itemPadding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(1)
+                  ),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.star,
+                    color: Color.fromRGBO(253, 204, 13, 1),
+                  ),
                 ),
               )
             ]
