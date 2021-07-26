@@ -29,7 +29,6 @@ class _TwoByTwoState extends State<TwoByTwo> {
       print('Error: $error');
       setState(() {
         _isError = true;
-        _isLoading = false;
       });
     }); 
   }
@@ -88,7 +87,7 @@ class _TwoByTwoState extends State<TwoByTwo> {
               primary: false,
               crossAxisSpacing: 10,
               mainAxisSpacing: 15,
-              childAspectRatio: 0.72,
+              childAspectRatio: 0.72 / 1,
               children: products.map<Widget>((e) {
                 return _buildCard(e);
               }).toList()

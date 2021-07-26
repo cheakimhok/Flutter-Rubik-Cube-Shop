@@ -29,7 +29,6 @@ class _ThreeByThreeState extends State<ThreeByThree> {
       print('Error: $error');
       setState(() {
         _isError = true;
-        _isLoading = false;
       });
     }); 
   }

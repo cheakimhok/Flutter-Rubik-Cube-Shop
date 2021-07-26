@@ -29,7 +29,6 @@ class _OthersProductState extends State<OthersProduct> {
       print('Error: $error');
       setState(() {
         _isError = true;
-        _isLoading = false;
       });
     }); 
   }

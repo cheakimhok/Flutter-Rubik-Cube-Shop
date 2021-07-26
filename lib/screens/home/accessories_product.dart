@@ -29,7 +29,6 @@ class _AccessoriesProductState extends State<AccessoriesProduct> {
       print('Error: $error');
       setState(() {
         _isError = true;
-        _isLoading = false;
       });
     }); 
   }

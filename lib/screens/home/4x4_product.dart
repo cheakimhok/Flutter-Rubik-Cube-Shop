@@ -29,7 +29,6 @@ class _FourByFourState extends State<FourByFour> {
       print('Error: $error');
       setState(() {
         _isError = true;
-        _isLoading = false;
       });
     }); 
   }

@@ -19,28 +19,28 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        key: _formKey,
-        margin: EdgeInsets.only(bottom: 50),
-        child: Column(
-          children: <Widget> [
-            Container(
-              height: MediaQuery.of(context).size.height*0.4,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 161, 233, 1),
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40))
+      body: SingleChildScrollView(
+        child: Container(
+          key: _formKey,
+          margin: EdgeInsets.only(bottom: 50),
+          child: Column(
+            children: <Widget> [
+              Container(
+                height: MediaQuery.of(context).size.height*0.4,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(0, 161, 233, 1),
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40))
+                ),
+                child: Center(
+                  child: Image.asset('assets/images/testing.png',
+                  width: 170,
+                  height: 170,
+                  fit: BoxFit.cover,
+                  )
+                ),     
               ),
-              child: Center(
-                child: Image.asset('assets/images/testing.png',
-                width: 170,
-                height: 170,
-                fit: BoxFit.cover,
-                )
-              ),     
-            ),
-
-            Expanded(
-              child: Container(
+      
+              Container(
                 margin: EdgeInsets.only(left: 30, right: 30, top: 20),
                 child: Column(
                   children: <Widget> [
@@ -75,7 +75,6 @@ class _SignUpState extends State<SignUp> {
                             _usernameController.text = "";
                             _passwordController.text = "";
                             _emailController.text = "";
-                            // TODO: alertdialog with error
                           }
                         },
                         child: Text("Sign Up",
@@ -90,27 +89,28 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(text: "Already have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)),
-                  TextSpan(text: "  Sign In", 
-                    style: TextStyle(
-                      fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
+              SizedBox(height: 20,),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(text: "Already have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)),
+                    TextSpan(text: "  Sign In", 
+                      style: TextStyle(
+                        fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
+                      ),
+                      recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignIn()),
+                        );
+                      }
                     ),
-                    recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
-                      );
-                    }
-                  ),
-                ]
-            )),
-            
-          ]
+                  ]
+              )),
+              
+            ]
+          ),
         ),
       ),
     );

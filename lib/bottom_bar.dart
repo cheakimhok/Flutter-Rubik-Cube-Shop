@@ -9,29 +9,10 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      // PageTransitionSwitcher(
-      //   transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>  
-      //   FadeThroughTransition(
-      //     animation: primaryAnimation,
-      //     secondaryAnimation: secondaryAnimation,
-      //     child: child
-      //   ),
-      //   child: screenList[_screenIndex],
-      // ),
       shape: CircularNotchedRectangle(),
-      // notchMargin: 6,
-      // color: Colors.transparent,
-      // elevation: 5,
       clipBehavior: Clip.antiAlias,
       child: Container(
         height: 60,
-        // decoration: BoxDecoration(
-        //   borderRadius: BorderRadius.only(
-        //     topLeft: Radius.circular(30),
-        //     topRight: Radius.circular(30),
-        //   ),
-        //   color: Colors.white,
-        // ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

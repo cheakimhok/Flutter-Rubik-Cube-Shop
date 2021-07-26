@@ -21,25 +21,25 @@ class _SignInState extends State<SignIn> {
       body: Container(
         key: _formKey,
         margin: EdgeInsets.only(bottom: 50),
-        child: Column(
-          children: <Widget> [
-            Container(
-              height: MediaQuery.of(context).size.height*0.4,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 161, 233, 1),
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40))
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget> [
+              Container(
+                height: MediaQuery.of(context).size.height*0.4,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(0, 161, 233, 1),
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40))
+                ),
+                child: Center(
+                  child: Image.asset('assets/images/testing.png',
+                  width: 170,
+                  height: 170,
+                  fit: BoxFit.cover,
+                  )
+                ),     
               ),
-              child: Center(
-                child: Image.asset('assets/images/testing.png',
-                width: 170,
-                height: 170,
-                fit: BoxFit.cover,
-                )
-              ),     
-            ),
-
-            Expanded(
-              child: Container(
+                
+              Container(
                 margin: EdgeInsets.only(left: 30, right: 30, top: 20),
                 child: Column(
                   children: <Widget> [
@@ -65,7 +65,7 @@ class _SignInState extends State<SignIn> {
                         ]
                       )
                     ),
-                    SizedBox(height: 70,),
+                    SizedBox(height: 160,),
                     SizedBox(
                       width: double.infinity,
                       height: 60,
@@ -88,7 +88,6 @@ class _SignInState extends State<SignIn> {
                             print(e);
                             _emailController.text = "";
                             _passwordController.text = "";
-                            // TODO: AlertDialog with error
                           }
                         },
                         child: Text("Sign In",
@@ -103,30 +102,31 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
               ),
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "Don't have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)
-                  ),
-                  TextSpan(
-                    text: "  Sign Up", 
-                    style: TextStyle(
-                      fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
+              SizedBox(height: 20),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have an account yet?", style: TextStyle(fontSize: 16,color: Colors.grey)
                     ),
-                    recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUp()),
-                      );
-                    }
-                  ),
-                ]
-            )),
-            
-          ]
+                    TextSpan(
+                      text: "  Sign Up", 
+                      style: TextStyle(
+                        fontSize: 16, color: Color.fromRGBO(0, 161, 233, 1),
+                      ),
+                      recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      }
+                    ),
+                  ]
+              )),
+              
+            ]
+          ),
         ),
       ),
     );
