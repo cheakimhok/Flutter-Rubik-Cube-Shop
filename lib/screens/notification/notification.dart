@@ -146,10 +146,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
             child: ListTile(
               title: Text(
                 '${fetchNotification[index].title}', 
-                style: TextStyle(fontSize: 18)
+                style: TextStyle(fontSize: 16)
               ),
               subtitle: Text(
                 '${fetchNotification[index].subtitle}',
+                style: TextStyle(fontSize: 12)
               ),
               leading: Icon(
                 Icons.notifications_outlined,

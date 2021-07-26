@@ -95,9 +95,6 @@ class _ThreeByThreeState extends State<ThreeByThree> {
               ).toList()
             ) 
           ),
-          SizedBox(height: 100),
-          SizedBox(height: 100),
-          SizedBox(height: 100),
         ],
       ),
     );

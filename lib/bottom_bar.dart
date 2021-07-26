@@ -12,12 +12,12 @@ class BottomBar extends StatelessWidget {
       shape: CircularNotchedRectangle(),
       clipBehavior: Clip.antiAlias,
       child: Container(
-        height: 60,
+        height: 80,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 25,
+              height: 40,
               width: MediaQuery.of(context).size.width /2 - 40.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -26,7 +26,7 @@ class BottomBar extends StatelessWidget {
                     icon: Icon(
                       Icons.home_outlined, 
                       color: Color(0xFF676E79),
-                      size: 33,
+                      size: 30,
                     ), 
                     onPressed: () {
                       Navigator.push(
@@ -39,7 +39,7 @@ class BottomBar extends StatelessWidget {
                     icon: Icon(
                       Icons.person_outlined, 
                       color: Color(0xFF676E79),
-                      size: 33,
+                      size: 30,
                     ), 
                     onPressed: () {
                       Navigator.push(
@@ -52,7 +52,7 @@ class BottomBar extends StatelessWidget {
               )
             ),
             Container(
-              height: 25,
+              height: 38,
               width: MediaQuery.of(context).size.width /2 - 40.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -60,7 +60,7 @@ class BottomBar extends StatelessWidget {
                   IconButton(
                     icon: Icon(
                       Icons.shopping_cart_outlined, color: Color(0xFF676E79),
-                      size: 30,
+                      size: 27,
                     ), 
                     onPressed: () {
                       Navigator.push(
@@ -73,7 +73,7 @@ class BottomBar extends StatelessWidget {
                     icon: Icon(
                       Icons.notifications_outlined, 
                       color: Color(0xFF676E79),
-                      size: 32,
+                      size: 29,
                     ), 
                     onPressed: () {
                       Navigator.push(

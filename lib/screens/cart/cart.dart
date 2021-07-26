@@ -247,7 +247,7 @@ class _CartScreenState extends State<CartScreen> {
         SizedBox(height: 30),
         Center(
           child: Container(
-            width: 380,
+            width: 350,
             height: 60,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.0),

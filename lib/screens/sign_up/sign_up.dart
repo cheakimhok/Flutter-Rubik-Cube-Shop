@@ -48,7 +48,7 @@ class _SignUpState extends State<SignUp> {
                     _emailInput(hint:"Email", icon:Icons.email),
                     _passwordInput(hint:"Password", icon:Icons.vpn_key),
                     Container(
-                      margin: EdgeInsets.only(top:30, bottom: 70),
+                      margin: EdgeInsets.only(top:10, bottom: 70),
                     ),
                     SizedBox(
                       width: double.infinity,
