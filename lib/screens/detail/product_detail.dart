@@ -86,12 +86,12 @@ class _ProductDetailState extends State<ProductDetail> {
 
       body: ListView(
         children: [
-          SizedBox(height: 15.0),
+          SizedBox(height: 15),
           Hero(
             tag: '${widget.product.productImage}',
             child: Image.network('${widget.product.productImage}',
-            height: 280,
-            width: 280,
+            height: 250,
+            width: 250,
             fit: BoxFit.contain
             )
           ),
@@ -146,7 +146,8 @@ class _ProductDetailState extends State<ProductDetail> {
                 )
               )
             )
-          )
+          ),
+          SizedBox(height: 65),
         ]
       ),
       floatingActionButton: Container(

@@ -57,77 +57,79 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
 
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
-          child: Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: <Widget> [
-                Container(
-                  height: 120,
-                  width: 120,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                        'assets/images/user.png'
-                        ),
-                      ),
-                      Positioned(
-                        right: 5,
-                        bottom: 1,
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color.fromRGBO(0, 161, 233, 1),
-                          ),
-                          child: Icon(
-                            Icons.camera_alt_outlined,
-                            color: Colors.white,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
+            child: Align(
+              alignment: Alignment.center,
+              child: Column(
+                children: <Widget> [
+                  Container(
+                    height: 120,
+                    width: 120,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: <Widget>[
+                        CircleAvatar(
+                          backgroundImage: AssetImage(
+                          'assets/images/user.png'
                           ),
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          right: 5,
+                          bottom: 1,
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromRGBO(0, 161, 233, 1),
+                            ),
+                            child: Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 35),
-                ProfileCard(
-                  text: "Cheakimhok Mao",
-                  icon: Icons.person_outline,
-                  edit: Icons.edit_outlined,
-                  press: () {},
-                ),
-                ProfileCard(
-                  text: "cmao1@paragoniu.edu.kh",
-                  icon: Icons.email_outlined,
-                  edit: Icons.edit_outlined,
-                  press: () {},
-                ),
-                ProfileCard(
-                  text: "+855 23 880 880",
-                  icon: Icons.call_outlined,
-                  edit: Icons.edit_outlined,
-                  press: () {},
-                ),
-                ProfileCard(
-                  text: "Phnom Penh",
-                  icon: Icons.place_outlined,
-                  edit: Icons.edit_outlined,
-                  press: () {},
-                ),
-                ProfileCard(
-                  text: "Log Out",
-                  icon: Icons.logout_outlined, 
-                  edit: null,
-                  press: () {
-                    auth.signOut();
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignIn()));
-                  },  
-                ),
-              ],
+                  SizedBox(height: 35),
+                  ProfileCard(
+                    text: "Cheakimhok Mao",
+                    icon: Icons.person_outline,
+                    edit: Icons.edit_outlined,
+                    press: () {},
+                  ),
+                  ProfileCard(
+                    text: "cmao1@paragoniu.edu.kh",
+                    icon: Icons.email_outlined,
+                    edit: Icons.edit_outlined,
+                    press: () {},
+                  ),
+                  ProfileCard(
+                    text: "+855 23 880 880",
+                    icon: Icons.call_outlined,
+                    edit: Icons.edit_outlined,
+                    press: () {},
+                  ),
+                  ProfileCard(
+                    text: "Phnom Penh",
+                    icon: Icons.place_outlined,
+                    edit: Icons.edit_outlined,
+                    press: () {},
+                  ),
+                  ProfileCard(
+                    text: "Log Out",
+                    icon: Icons.logout_outlined, 
+                    edit: null,
+                    press: () {
+                      auth.signOut();
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignIn()));
+                    },  
+                  ),
+                ],
+              ),
             ),
           ),
         ),

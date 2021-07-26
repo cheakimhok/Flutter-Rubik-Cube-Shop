@@ -139,82 +139,91 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   Widget cartBody () {
-    return ListView(
+    return Column(
       children: <Widget> [
-        Column(
-          children: List.generate(fetchCart.length, (index) {
-          return Padding(
-            padding: EdgeInsets.only(right: 25, left: 25, bottom: 10, top: 15),
-            child: Row(
-              children: <Widget> [
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    // color: Colors.grey,
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        '${fetchCart[index].productImage}', 
-                      ), 
-                      fit: BoxFit.contain,
-                    ) 
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+        Expanded(
+          child: ListView(
+            children: List.generate(fetchCart.length, (index) {
+                return Padding(
+                  padding: EdgeInsets.only(right: 25, left: 25, bottom: 10, top: 25),
+                  child: Row(
                     children: <Widget> [
-                      Row(
-                        children: <Widget> [
-                          SizedBox(width: 20),
-                          Text(
-                            '${fetchCart[index].productName}',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(width: 90),
-                          Icon(
-                            Icons.close,
-                            size: 28,
-                          )
-                        ],
+                      Container(
+                        width: 110,
+                        height: 110,
+                        decoration: BoxDecoration(
+                          // color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              '${fetchCart[index].productImage}', 
+                            ), 
+                            fit: BoxFit.contain,
+                          ) 
+                        ),
                       ),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget> [
-                          SizedBox(height: 50),
-                          SizedBox(width: 20),
-                          Text(
-                            '${fetchCart[index].productPrice}',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500,
-                            ),
+                          Row(
+                            children: <Widget> [
+                              SizedBox(width: 20),
+                              Text(
+                                '${fetchCart[index].productName}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(width: 75),
+                              Icon(
+                                Icons.close,
+                                size: 28,
+                              )
+                            ],
                           ),
-                          SizedBox(width: 30),
-                          Text(
-                            'x${fetchCart[index].productAmount}',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500
-                            )
+                          Row(
+                            children: <Widget> [
+                              SizedBox(height: 50),
+                              SizedBox(width: 20),
+                              Text(
+                                '${fetchCart[index].productPrice}',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: 30),
+                              Text(
+                                'x${fetchCart[index].productAmount}',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500
+                                )
+                              )
+                            ],
                           )
                         ],
                       )
                     ],
                   ),
-                )
-              ],
+                );
+              }
             ),
-          );
-        }),),
-        SizedBox(height: 60), 
+          )
+        ),
+        totalPrice()
+      ]
+    );
+  }
+
+  Widget totalPrice() {
+    return Column(
+      children: <Widget> [
         Padding(
-          padding: EdgeInsets.only(left:25, right: 25),
+          padding: EdgeInsets.only(top: 15, left:25, right: 25),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween, 
             children: <Widget> [
@@ -254,7 +263,8 @@ class _CartScreenState extends State<CartScreen> {
               )
             )
           )
-        )
+        ),
+        SizedBox(height: 55),
       ]
     );
   }

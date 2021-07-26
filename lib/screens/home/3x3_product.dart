@@ -131,8 +131,8 @@ class _ThreeByThreeState extends State<ThreeByThree> {
               Hero(
                 tag: product.productImage,
                 child: Container (
-                  height: 120,
-                  width: 120,
+                  height: 110,
+                  width: 110,
                   decoration: BoxDecoration (
                     image: DecorationImage (
                       image: NetworkImage (product.productImage),
@@ -153,8 +153,9 @@ class _ThreeByThreeState extends State<ThreeByThree> {
               Text(
                 product.productName,
                 style: TextStyle(
-                color: Color(0xFF575E67),
-                fontSize: 15)
+                  color: Color(0xFF575E67),
+                  fontSize: 14
+                )
               ),
               SizedBox(height: 5),
               Padding (
@@ -164,21 +165,17 @@ class _ThreeByThreeState extends State<ThreeByThree> {
                   height: 2,
                 ),
               ),
-              SizedBox(height: 5),
-              Padding (
-                padding: EdgeInsets.only(left: 5, right: 5),
-                child: RatingBarIndicator (
-                  rating: 4.5,
-                  direction: Axis.horizontal,
-                  itemCount: 5,
-                  itemSize: 22,
-                  itemPadding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(1)
-                  ),
-                  itemBuilder: (context, _) => Icon(
-                    Icons.star,
-                    color: Color.fromRGBO(253, 204, 13, 1),
-                  ),
+              RatingBarIndicator (
+                rating: 4.5,
+                direction: Axis.horizontal,
+                itemCount: 5,
+                itemSize: 18,
+                itemPadding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(1)
+                ),
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Color.fromRGBO(253, 204, 13, 1),
                 ),
               )
             ]

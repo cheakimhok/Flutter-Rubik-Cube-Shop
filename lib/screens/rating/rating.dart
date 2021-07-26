@@ -72,83 +72,85 @@ class _RatingProductState extends State<RatingProduct> {
       ),
 
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
-          child: Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: <Widget> [
-                Container(
-                  height: 120,
-                  width: 120,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                        'assets/images/user.png'
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 45),
+            child: Align(
+              alignment: Alignment.center,
+              child: Column(
+                children: <Widget> [
+                  Container(
+                    height: 120,
+                    width: 120,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: <Widget>[
+                        CircleAvatar(
+                          backgroundImage: AssetImage(
+                          'assets/images/user.png'
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 30,),
-                Text(
-                  'Cheakimhok Mao',
-                  style: TextStyle(
-                     fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black54
-                  ),
-                ),
-                SizedBox(height: 60,),
-                Text(
-                  'How was this product?',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey
-                  ),
-                ),
-                SizedBox(height: 30,),
-                RatingBar.builder(
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 45,
-                  itemPadding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(1)
-                  ),
-                  itemBuilder: (context, index) => Icon(
-                    Icons.star,
-                    color: Color.fromRGBO(253, 204, 13, 1),
-                  ),
-                  onRatingUpdate: (value) {
-                    rating = value;
-                  },
-                ),
-                SizedBox(height: 180),
-                SizedBox(
-                  width: getProportionateScreenWidth(310),
-                  height: getProportionateScreenHeight(56),
-                  // ignore: deprecated_member_use
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      ],
                     ),
-                    color: Color.fromRGBO(0, 161, 233, 1),
-                    onPressed: _onSubmitClick,
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(18),
-                        color: Colors.white,
-                      ),
-                    )
                   ),
-                )
-              ],
+                  SizedBox(height: 30,),
+                  Text(
+                    'Cheakimhok Mao',
+                    style: TextStyle(
+                       fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black54
+                    ),
+                  ),
+                  SizedBox(height: 60,),
+                  Text(
+                    'How was this product?',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                  RatingBar.builder(
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemSize: 45,
+                    itemPadding: EdgeInsets.symmetric(
+                      horizontal: getProportionateScreenWidth(1)
+                    ),
+                    itemBuilder: (context, index) => Icon(
+                      Icons.star,
+                      color: Color.fromRGBO(253, 204, 13, 1),
+                    ),
+                    onRatingUpdate: (value) {
+                      rating = value;
+                    },
+                  ),
+                  SizedBox(height: 80),
+                  SizedBox(
+                    width: getProportionateScreenWidth(310),
+                    height: getProportionateScreenHeight(56),
+                    // ignore: deprecated_member_use
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      color: Color.fromRGBO(0, 161, 233, 1),
+                      onPressed: _onSubmitClick,
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(18),
+                          color: Colors.white,
+                        ),
+                      )
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
